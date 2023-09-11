@@ -1,6 +1,8 @@
 class Solution {
     public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
-
+        // IDEA
+        // Find Max
+        // Reiterate and construct boolean list
         int maxCandies = candies[0];
         List<Boolean> result = new ArrayList<>();
 
