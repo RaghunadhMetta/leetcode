@@ -24,6 +24,6 @@ class Solution {
     }
 
     private boolean isVowel(char ch){
-        return vowels.indexOf(ch) != -1;
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' || ch == 'A' || ch == 'E' || ch == 'I' || ch =='O' || ch == 'U';
     }
 }
