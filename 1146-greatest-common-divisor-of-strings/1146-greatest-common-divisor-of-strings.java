@@ -2,40 +2,38 @@ class Solution {
     public String gcdOfStrings(String str1, String str2) {
 
         int gcdSize = 0;
+        int minLength = Math.min(str1.length(),str2.length());
+
         String expectedS1 = "";
         String expectedS2 = "";
-        StringBuilder gcdString = new StringBuilder();
-        for(int i=1;i<=Math.min(str1.length(),str2.length());i++){
+        for(int i=1;i<=minLength;i++){
             if(str1.length()%i==0 && str2.length()%i==0){
                 gcdSize=i;
             }
         }
+        // if(!str1.substring(0,gcdSize).equals(str2.substring(0,gcdSize))){
+        //     return "";
+        // }
+
+        int s1Generator = str1.length()/gcdSize;
+        int s2Generator = str2.length()/gcdSize;
         
-        for(int i=0;i<gcdSize;i++){
-
-            if(str1.charAt(i)==str2.charAt(i)){
-                gcdString.append(str1.charAt(i));
-            }else{
-                break;
-            }
-        }
-
-        for(int i=0;i<str1.length()/gcdSize;i++){
-            expectedS1 = expectedS1 +gcdString.toString();
+        for(int i=0;i<s1Generator;i++){
+            expectedS1 = expectedS1 +str1.substring(0,gcdSize);
 
         }
         if(!expectedS1.equals(str1)){
             return "";
         }
 
-        for(int i=0;i<str2.length()/gcdSize;i++){
-            expectedS2 = expectedS2 +gcdString.toString();
+        for(int i=0;i<s2Generator;i++){
+            expectedS2 = expectedS2 +str1.substring(0,gcdSize);
 
         }
         if(!expectedS2.equals(str2)){
             return "";
         }
 
-        return gcdString.toString();
+        return str1.substring(0,gcdSize);
     }
 }
