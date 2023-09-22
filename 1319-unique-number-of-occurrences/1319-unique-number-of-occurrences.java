@@ -5,17 +5,9 @@ class Solution {
         for(int i:arr){
             map.merge(i ,1, (oldVal,newVal) -> oldVal+newVal);
         }
-        List<Integer> countList =new ArrayList<>(map.values());
-        Collections.sort(countList);
 
-        for(int i=0;i<countList.size()-1;i++){
-            if(countList.get(i) == countList.get(i+1)){
-                return false;
-            }
+        Set<Integer> countSet = new HashSet<>(map.values());
 
-        }
-
-        return true;
-
+        return map.size()==countSet.size();
     }
 }
