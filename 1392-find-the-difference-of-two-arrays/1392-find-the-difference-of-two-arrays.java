@@ -4,6 +4,15 @@ class Solution {
         Set<Integer> nums2Set = new HashSet<>();
 
         int lengthToIterate = Integer.max(nums1.length,nums2.length);
+        for(int i=0;i<lengthToIterate;i++){
+            if(i<nums1.length){
+                nums1Set.add(nums1[i]);
+            }
+            if(i<nums2.length){
+                nums2Set.add(nums2[i]);
+            }
+        }
+
 
         for(int i=0;i<lengthToIterate;i++){
             if(i<nums1.length){
